@@ -281,7 +281,7 @@ class DepartureCard extends HTMLElement {
           now = new Date(),
           d = new Date(now);
         d.setHours(h, m + delay, 0, 0);
-        if (d < now && d-now > 5) d.setDate(d.getDate() + 1); // Mitternacht-Übergang
+        if (d < now) d.setDate(d.getDate() + 1); // Mitternacht-Übergang
 
         let diffMinutes = Math.round((d - now) / 60000);
         if (diffMinutes < limit) {
